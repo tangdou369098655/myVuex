@@ -7,7 +7,15 @@
     <router-view/>
   </div>
 </template>
-
+<script>
+export default {
+  mounted() {
+    this.$store.dispatch('fetchData', { id: 250 })
+    this.$store.commit('updateMyObj', { id: 250 })
+    this.$store.state.myObj
+  }
+}
+</script>
 <style lang="less">
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
